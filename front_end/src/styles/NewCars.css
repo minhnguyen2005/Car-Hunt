@@ -1,0 +1,60 @@
+:root {
+  --primary-dark: #001f2b;
+  --accent-blue: #00bcd4;
+}
+
+.loader-overlay {
+  background-color: rgba(0, 31, 43, 0.9);
+}
+
+.loading-text {
+  color: var(--accent-blue);
+}
+
+.newcars-page {
+  background-color: var(--primary-bg);
+  min-height: 100vh;
+  color: var(--text-light);
+  padding-bottom: 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.page-banner {
+  background-color: #0c1a23;
+  padding: 60px 80px 20px;
+  border-bottom: 1px solid #1e2a34;
+}
+
+.page-banner h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.page-banner .breadcrumb {
+  font-size: 14px;
+  color: #9ca9b3;
+}
+
+.newcars-layout {
+  display: flex;
+  gap: 30px;
+  padding: 30px 80px;
+}
+
+.sidebar {
+  flex: 0 0 280px;
+  background-color: #10202b;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.results-count {
+  color: #ccc;
+  margin: 15px 0;
+}

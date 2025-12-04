@@ -1,0 +1,123 @@
+.sortbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #030b17; /* tông tối giống filter sidebar */
+  padding: 12px 20px;
+  border-radius: 14px;
+  border: 1px solid #1a2a3f;
+  box-shadow: 0 12px 30px rgba(2, 10, 25, 0.6);
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+/* 🔍 Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #071423;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid #1e2f46;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  border-color: #007bff;
+  background: #0b2740;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.35);
+}
+
+.search-icon {
+  color: #666;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: #333;
+  width: 180px;
+}
+
+/* 📊 Sort section */
+.sortbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sort-group {
+  display: flex;
+  align-items: center;
+  background: #071423;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #1e2f46;
+  transition: all 0.3s ease;
+}
+
+.sort-group:hover {
+  background: #0b2740;
+}
+
+.sort-select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  padding-left: 6px;
+}
+
+/* 🧩 View toggle */
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #071423;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #1e2f46;
+}
+
+.view-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.25s ease;
+}
+
+.view-btn:hover {
+  background: #e4ebf3;
+  color: #007bff;
+}
+
+.view-btn.active {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sortbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .sortbar-right {
+    justify-content: space-between;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}

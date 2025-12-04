@@ -1,0 +1,11 @@
+:root {
+  --primary-bg: #020b16; /* nền xanh đen */
+  --primary-dark: #041226; /* đen xanh đậm */
+  --primary-light: #071c32; /* xanh nhạt nền item */
+  --primary-lighter: #0b2740;
+  --border-soft: #12324c;
+  --accent: #2ab7ff; /* xanh lam sáng */
+  --accent-hover: #1c8fe0; /* xanh lam hover */
+  --text-main: #f0f6ff;
+  --text-sub: #8fb4d9;
+}

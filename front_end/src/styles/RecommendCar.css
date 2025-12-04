@@ -1,0 +1,25 @@
+.recommend-section {
+  padding: 20px 0;
+}
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #cde;
+}
+.tabs button {
+  background: none;
+  border: none;
+  color: #9fb3bf;
+  padding: 6px 10px;
+}
+.tabs .active {
+  border-bottom: 2px solid #00aaff;
+  color: #fff;
+}

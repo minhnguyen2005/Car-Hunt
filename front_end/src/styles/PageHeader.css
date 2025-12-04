@@ -1,0 +1,18 @@
+.page-header {
+  background-color: #0d1b24; /* cùng màu navbar */
+  color: #fff;
+  padding: 60px 120px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-header p {
+  color: #9ca3af;
+  margin-top: 8px;
+  font-size: 15px;
+}

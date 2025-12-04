@@ -1,0 +1,624 @@
+/* ===============================
+   GLOBAL STYLE
+================================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+/* ===============================
+   BANNER SECTION
+================================*/
+.banner {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.slide {
+  display: none;
+  height: 100%;
+}
+
+.active-slide {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: brightness(70%);
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.banner-content h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Banner navigation arrows */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.prev:hover,
+.next:hover {
+  background: #ff4b2b;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===============================
+   RECOMMENDED CARS SECTION
+================================*/
+.recommended-section {
+  background: #020b16;
+}
+
+.recommended-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recommended-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.recommended-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.see-more {
+  text-decoration: none;
+  color: #ff4b2b;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+.see-more:hover {
+  color: #e43d22;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tabs button {
+  padding: 10px 25px;
+  border: 1px solid #2b3c55;
+  background: #071423;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  color: #e5f0ff;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: #ff4b2b;
+  color: #fff;
+  border-color: #ff4b2b;
+}
+
+/* Car list */
+.cars-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  background: var(--secondary-bg, #030b17);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 30px rgba(2, 20, 30, 0.25);
+  padding: 25px;
+  text-align: center;
+  color: #ffffff;
+  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-6px);
+  border-color: #00bcd4;
+  background: #08172e;
+  box-shadow: 0 18px 35px rgba(2, 20, 30, 0.4);
+}
+
+.car-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.car-card p {
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   COMPARE CAR SECTION
+================================*/
+.compare-section {
+  background: #020b16;
+  text-align: center;
+}
+
+.compare-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.compare-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.compare-card {
+  background: #071423;
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 14px 30px rgba(2, 20, 30, 0.3);
+  transition: 0.3s;
+  color: #f8fbff;
+}
+
+.compare-card:hover {
+  background: #0b2740;
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(2, 20, 30, 0.6);
+}
+
+.compare-card h3 {
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.compare-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.btn-search {
+  margin-top: 15px;
+  background: #ff4b2b;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-search:hover {
+  background: #e43d22;
+}
+
+/* ===============================
+   FOOTER
+================================*/
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 160px;
+  margin-bottom: 40px;
+}
+
+/* Footer content */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 40px;
+}
+
+/* Each column */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff4b2b;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-column ul li:hover {
+  color: #ff4b2b;
+}
+
+/* Address & Socials */
+.footer-column p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-socials svg {
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-socials svg:hover {
+  color: #ff4b2b;
+}
+
+/* Bottom line */
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  width: 100%;
+}
+
+/* ===============================
+   ABOUT US SECTION
+================================*/
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10%;
+  background-color: #f8f8f8;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-section img {
+  width: 45%;
+  max-width: 550px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.about-content {
+  width: 50%;
+  max-width: 550px;
+  color: #222;
+}
+
+.about-content h2 {
+  font-size: 2.2rem;
+  color: #ff4b2b;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.about-content strong {
+  color: #ff4b2b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+  }
+
+  .about-section img {
+    width: 90%;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+}
+
+/* ====== SEARCH FILTER ====== */
+.search-filter-section {
+  width: 100%;
+  background-color: #f3f5f8;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.tab-btn {
+  background-color: #071423;
+  color: #d1e3ff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.tab-btn:hover {
+  background-color: #0b2740;
+}
+
+/* Filter box */
+.filter-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: #030b17;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(2, 10, 25, 0.6);
+}
+
+/* Input + icon */
+.filter-item {
+  display: flex;
+  align-items: center;
+  background: #071423;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.filter-icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.filter-item input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+}
+
+/* Select boxes */
+.filter-select {
+  background: #071423;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  color: #e5f0ff;
+}
+
+/* Price range */
+.filter-price {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.filter-price label {
+  font-size: 14px;
+  color: #d1e3ff;
+  margin-bottom: 5px;
+}
+
+.price-value {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.filter-price input[type="range"] {
+  width: 200px;
+}
+
+/* Search button */
+.btn-search {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-search:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-box {
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+  }
+}
+
+/* === Car List Section === */
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 0;
+}
+
+.car-item {
+  background: #071423;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2, 10, 25, 0.6);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  color: #f8fbff;
+}
+
+.car-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.car-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 15px 20px;
+}
+
+.car-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.car-info p {
+  margin: 3px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.car-price {
+  font-size: 1.1rem;
+  color: #e63946;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.btn-view {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+  background: #005fd1;
+}

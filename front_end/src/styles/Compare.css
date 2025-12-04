@@ -1,0 +1,503 @@
+.compare-page {
+  min-height: 100vh;
+  background: #030b17;
+  padding: 80px 0 120px;
+  color: #f8fbff;
+}
+
+.compare-header {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+
+.breadcrumb {
+  color: rgba(177, 199, 220, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.breadcrumb a {
+  color: #57c0ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: #8fd6ff;
+}
+
+.compare-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f8fbff;
+  margin: 0;
+}
+
+.compare-cards-container {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.compare-card {
+  position: relative;
+  background: #071423;
+  border: 1px solid #112337;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.compare-card:hover {
+  border-color: #57c0ff;
+  transform: translateY(-4px);
+}
+
+.remove-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 77, 77, 0.2);
+  border: 1px solid rgba(255, 77, 77, 0.5);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.remove-btn:hover {
+  background: rgba(255, 77, 77, 0.3);
+  border-color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.status-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(88, 192, 255, 0.15);
+  border: 1px solid rgba(88, 192, 255, 0.55);
+  color: #8fd6ff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 5;
+}
+
+.compare-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #000;
+}
+
+.compare-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.price-range {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #59c2ff;
+  margin: 0;
+}
+
+.original-price {
+  font-size: 0.9rem;
+  color: rgba(177, 199, 220, 0.6);
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.car-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #f8fbff;
+}
+
+.car-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #f8fbff;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rating-stars svg {
+  color: rgba(156, 178, 200, 0.35);
+  fill: rgba(156, 178, 200, 0.25);
+}
+
+.rating-stars svg.filled {
+  color: #ffd166;
+  fill: #ffd166;
+}
+
+.rating-stars svg.half {
+  color: #ffd166;
+  fill: rgba(255, 209, 102, 0.5);
+}
+
+.add-card {
+  border: 2px dashed rgba(88, 192, 255, 0.3);
+  background: rgba(7, 20, 35, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-card:hover {
+  border-color: #57c0ff;
+  background: rgba(7, 20, 35, 0.6);
+}
+
+.add-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.add-icon {
+  color: #57c0ff;
+  opacity: 0.7;
+}
+
+.add-card-content p {
+  color: rgba(177, 199, 220, 0.9);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.add-card-subtext {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: rgba(177, 199, 220, 0.6);
+}
+
+.add-car-dropdown {
+  margin-top: 8px;
+}
+
+.add-car-dropdown select {
+  background: rgba(4, 12, 23, 0.8);
+  border: 1px solid rgba(88, 192, 255, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #f8fbff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 200px;
+  transition: border-color 0.2s ease;
+}
+
+.add-car-dropdown select:focus {
+  outline: none;
+  border-color: #57c0ff;
+}
+
+.compare-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.compare-section {
+  background: #071423;
+  border: 1px solid #112337;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  color: #f8fbff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.section-header:hover {
+  background: rgba(88, 192, 255, 0.05);
+}
+
+.section-header svg {
+  color: #57c0ff;
+}
+
+.section-content {
+  padding: 0 24px 24px;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.compare-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.compare-table td {
+  padding: 16px 12px;
+  color: rgba(177, 199, 220, 0.9);
+  font-size: 0.95rem;
+}
+
+.compare-table td:first-child {
+  color: #f8fbff;
+  font-weight: 500;
+  width: 200px;
+}
+
+.compare-table td:not(:first-child) {
+  text-align: center;
+}
+
+.empty-compare {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.empty-compare p {
+  font-size: 1.2rem;
+  color: rgba(177, 199, 220, 0.8);
+  margin-bottom: 24px;
+}
+
+.browse-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #2ab7ff, #1e6bff);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(32, 145, 255, 0.35);
+}
+
+.browse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(32, 145, 255, 0.45);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2ab7ff, #1e6bff);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(32, 145, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(32, 145, 255, 0.45);
+}
+
+.car-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.car-picker-modal {
+  background: #071423;
+  border-radius: 16px;
+  border: 1px solid #112337;
+  max-width: 900px;
+  width: 90%;
+  max-height: 80vh;
+  padding: 20px 24px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.car-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.car-picker-header h2 {
+  font-size: 1.4rem;
+  color: #f8fbff;
+  margin: 0;
+}
+
+.car-picker-close {
+  border: none;
+  background: rgba(4, 12, 23, 0.9);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8fb4d9;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.car-picker-close:hover {
+  background: rgba(88, 192, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.car-picker-loading,
+.car-picker-empty {
+  color: rgba(177, 199, 220, 0.9);
+  text-align: center;
+  padding: 16px 0;
+}
+
+.car-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding-top: 8px;
+  overflow-y: auto;
+}
+
+.car-picker-item {
+  background: #020b16;
+  border-radius: 12px;
+  border: 1px solid #112337;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.car-picker-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: #000;
+}
+
+.car-picker-info {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.car-picker-name {
+  color: #f8fbff;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.car-picker-price {
+  color: #57c0ff;
+  font-size: 0.9rem;
+}
+
+.car-picker-item:hover {
+  border-color: #57c0ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(32, 145, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .car-picker-modal {
+    width: 95%;
+    padding: 16px 16px 20px;
+  }
+
+  .car-picker-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .compare-cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-header h1 {
+    font-size: 2rem;
+  }
+
+  .compare-table {
+    font-size: 0.85rem;
+  }
+
+  .compare-table td {
+    padding: 12px 8px;
+  }
+
+  .compare-table td:first-child {
+    width: 120px;
+  }
+}

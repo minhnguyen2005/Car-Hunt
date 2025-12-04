@@ -1,0 +1,205 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* Không dùng nền trắng thuần */
+  background-color: #020b16;
+  color: #f0f6ff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #007bff;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Main content */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Card chung */
+.card {
+  background: #071423;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  background: #041226;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  color: #8fb4d9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ===== Sections chung ===== */
+.section {
+  padding: 70px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1f2937;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: #2563eb;
+  margin: 8px auto 0;
+  border-radius: 3px;
+}
+
+/* ===== Recommended Cars + New Cars (Card style) ===== */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 260px;
+  background: #071423;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ===== Compare Cars ===== */
+.compare-box {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  padding: 40px 30px;
+  border-radius: 16px;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.compare-box p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.compare-box .btn {
+  background: #020b16;
+  color: #f0f6ff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+
+.compare-box .btn:hover {
+  background: #071423;
+}
+
+/* ===== About Us ===== */
+.about-us {
+  background: #041226;
+  border-radius: 12px;
+  padding: 60px 30px;
+  margin-top: 40px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.about-us p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #d1e3ff;
+}

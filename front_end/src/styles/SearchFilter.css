@@ -1,0 +1,160 @@
+/* ===========================
+   🧡 Orange-White-Black Theme
+   =========================== */
+
+.search-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.search-filter {
+  width: 850px;
+  background: #111; /* black base */
+  color: #fff;
+  border-radius: 16px;
+  padding: 1.2rem 1.8rem;
+  box-shadow: 0 6px 20px rgba(255, 123, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Tabs (All / New / Used) */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tab:hover {
+  color: #fff;
+}
+
+.tab.active {
+  color: #ff7b00;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: #ff7b00;
+  border-radius: 2px;
+}
+
+/* Filter rows */
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 0.8rem;
+}
+
+/* Inputs and selects */
+.filter-input,
+.filter-select {
+  flex: 1;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.filter-input::placeholder {
+  color: #aaa;
+}
+
+.filter-input:hover,
+.filter-select:hover {
+  border-color: #ff7b00;
+  background: #222;
+}
+
+/* Price Range */
+.price-range {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+.price-range label {
+  margin-bottom: 4px;
+  color: #ff7b00;
+  font-weight: 500;
+}
+
+.price-range input[type="range"] {
+  width: 100%;
+  accent-color: #ff7b00;
+  cursor: pointer;
+}
+
+.price-range span {
+  font-size: 0.85rem;
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* Search Button */
+.search-btn {
+  flex: 1;
+  background: #ff7b00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.3);
+}
+
+.search-btn:hover {
+  background: #e06f00;
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(255, 123, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .search-filter {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .price-range {
+    width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+}
