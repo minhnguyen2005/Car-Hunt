@@ -27,7 +27,7 @@ const createAdmin = async () => {
       name: "Admin",
       email: "admin@carhunt.com",
       phone: "1234567890",
-      password: "admin123", // Change this password in production!
+      password: "admin123",
       role: "admin",
     });
 

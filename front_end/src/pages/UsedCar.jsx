@@ -5,27 +5,19 @@ import CarList from "../components/CarList";
 import Loader from "../components/Loader";
 import PageHeader from "../components/PageHeader";
 import { getCarsByTag } from "../api/mockApi";
+import {
+  BASE_QUERY_USED,
+  handleSearchFactory,
+  handleSidebarChangeFactory,
+} from "../utils/catalogUtils";
 import "../styles/NewCars.css";
-
-const BASE_QUERY = {
-  q: "",
-  sortBy: "",
-  condition: "used",
-  page: 1,
-  limit: 12,
-  minPrice: 0,
-  maxPrice: 3000000,
-  brand: null,
-  model: null,
-  year: null,
-};
 
 export default function UsedCar() {
   const [viewMode, setViewMode] = useState("list");
   const [cars, setCars] = useState([]);
   const [allCars, setAllCars] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [query, setQuery] = useState(() => ({ ...BASE_QUERY }));
+  const [query, setQuery] = useState(() => ({ ...BASE_QUERY_USED }));
 
   const fetchData = useCallback(
     async (opts = {}, showLoader = true) => {
@@ -46,52 +38,24 @@ export default function UsedCar() {
 
   useEffect(() => {
     fetchData({}, true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const debounce = (fn, delay) => {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => fn(...args), delay);
-    };
-  };
+  const handleSearch = handleSearchFactory({
+    baseQuery: BASE_QUERY_USED,
+    getAllCars: () => allCars,
+    setCars,
+    setQuery,
+    fetchData,
+  });
 
-  const handleSearch = debounce((opts) => {
-    const term = opts.q?.trim() || "";
-    if (term === "") {
-      const randomCars = allCars.sort(() => 0.5 - Math.random()).slice(0, 6);
-      setCars(randomCars);
-      setQuery({ ...BASE_QUERY });
-      return;
-    }
-    const next = { ...query, ...opts, page: 1, condition: "used" };
-    setQuery(next);
-    fetchData(next, false);
-  }, 500);
-
-  const handleSidebarChange = (opts) => {
-    if (opts.reset) {
-      setCars(allCars);
-      setQuery({ ...BASE_QUERY });
-      return;
-    }
-    const selectedBrand = opts.brands?.[0] || null;
-    const selectedYear = opts.years?.[0] || null;
-    const next = {
-      ...query,
-      brand: selectedBrand,
-      year: selectedYear,
-      minPrice:
-        typeof opts.minPrice === "number" ? opts.minPrice : query.minPrice,
-      maxPrice:
-        typeof opts.maxPrice === "number" ? opts.maxPrice : query.maxPrice,
-      page: 1,
-      condition: "used",
-    };
-    setQuery(next);
-    fetchData(next, false);
-  };
+  const handleSidebarChange = handleSidebarChangeFactory({
+    baseQuery: BASE_QUERY_USED,
+    getAllCars: () => allCars,
+    getQuery: () => query,
+    setCars,
+    setQuery,
+    fetchData,
+  });
 
   return (
     <div className="newcars-page">

@@ -5,26 +5,19 @@ import CarList from "../components/CarList";
 import Loader from "../components/Loader";
 import PageHeader from "../components/PageHeader";
 import { getCars } from "../api/mockApi";
+import {
+  BASE_QUERY_NEW,
+  handleSearchFactory,
+  handleSidebarChangeFactory,
+} from "../utils/catalogUtils";
 import "../styles/NewCars.css";
 
 export default function NewCars() {
   const [viewMode, setViewMode] = useState("list");
   const [cars, setCars] = useState([]);
   const [allCars, setAllCars] = useState([]);
-  const [loading, setLoading] = useState(true); // chỉ loader khi load trang
-
-  const [query, setQuery] = useState({
-    q: "",
-    sortBy: "",
-    condition: "all",
-    page: 1,
-    limit: 12,
-    minPrice: 0,
-    maxPrice: 3000000,
-    brand: null,
-    model: null,
-    year: null,
-  });
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState({ ...BASE_QUERY_NEW });
 
   const fetchData = useCallback(
     async (opts = {}, showLoader = true) => {
@@ -43,68 +36,25 @@ export default function NewCars() {
   );
 
   useEffect(() => {
-    // chỉ bật loader khi load trang lần đầu
     fetchData({}, true);
   }, []);
 
-  // ✅ debounce cho search input
-  const debounce = (fn, delay) => {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => fn(...args), delay);
-    };
-  };
+  const handleSearch = handleSearchFactory({
+    baseQuery: BASE_QUERY_NEW,
+    getAllCars: () => allCars,
+    setCars,
+    setQuery,
+    fetchData,
+  });
 
-  // ✅ xử lý search logic
-  const handleSearch = debounce((opts) => {
-    const term = opts.q?.trim() || "";
-    if (term === "") {
-      // nếu ô tìm kiếm trống → hiện ngẫu nhiên vài mẫu xe
-      const randomCars = allCars.sort(() => 0.5 - Math.random()).slice(0, 6);
-      setCars(randomCars);
-      setQuery({ ...query, q: "" });
-      return;
-    }
-    const next = { ...query, ...opts, page: 1 };
-    setQuery(next);
-    fetchData(next, false); // ❌ không loader khi chỉ search
-  }, 500);
-
-  // ✅ xử lý thay đổi FilterSidebar
-  const handleSidebarChange = (opts) => {
-    if (opts.reset) {
-      // reset filter → hiển thị lại toàn bộ xe
-      setCars(allCars);
-      setQuery({
-        q: "",
-        sortBy: "",
-        condition: "all",
-        page: 1,
-        limit: 12,
-        minPrice: 0,
-        maxPrice: 3000000,
-        brand: null,
-        model: null,
-        year: null,
-      });
-      return;
-    }
-    const selectedBrand = opts.brands?.[0] || null;
-    const selectedYear = opts.years?.[0] || null;
-    const next = {
-      ...query,
-      brand: selectedBrand,
-      year: selectedYear,
-      minPrice:
-        typeof opts.minPrice === "number" ? opts.minPrice : query.minPrice,
-      maxPrice:
-        typeof opts.maxPrice === "number" ? opts.maxPrice : query.maxPrice,
-      page: 1,
-    };
-    setQuery(next);
-    fetchData(next, false); // ❌ không loader khi filter
-  };
+  const handleSidebarChange = handleSidebarChangeFactory({
+    baseQuery: BASE_QUERY_NEW,
+    getAllCars: () => allCars,
+    getQuery: () => query,
+    setCars,
+    setQuery,
+    fetchData,
+  });
 
   return (
     <div className="newcars-page">
